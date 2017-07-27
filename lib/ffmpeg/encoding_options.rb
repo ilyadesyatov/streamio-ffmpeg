@@ -51,7 +51,7 @@ module FFMPEG
     def convert_aspect(value)
       ["-aspect", value]
     end
-
+  
     def calculate_aspect
       width, height = self[:resolution].split("x")
       width.to_f / height.to_f
@@ -83,6 +83,10 @@ module FFMPEG
 
     def convert_audio_bitrate(value)
       ["-b:a", k_format(value)]
+    end
+    
+    def convert_audio_metadata(value)
+      ["-c:v", value]
     end
 
     def convert_audio_sample_rate(value)
