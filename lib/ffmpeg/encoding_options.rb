@@ -88,6 +88,10 @@ module FFMPEG
     def convert_audio_metadata(value)
       ["-c:v", value]
     end
+    
+    def convert_audio_mapping(value)
+      ["-map", value]
+    end
 
     def convert_audio_sample_rate(value)
       ["-ar", value]
